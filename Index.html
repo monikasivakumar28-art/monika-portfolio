@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>{{profile.name}}</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<nav class="navbar">
+
+<div class="logo">{{profile.name}}</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+
+<header id="home" class="hero">
+
+<h1>{{profile.name}}</h1>
+
+<h3 class="typing"></h3><span class="cursor">|</span>
+
+<p>{{profile.location}}</p>
+
+<a href="/static/Monika_Sri_Resume.pdf" download="Monika_Sri_Resume.pdf" class="resume-btn">
+<span>⬇ Download Resume</span>
+</a>
+
+<div class="icons">
+
+<span>🐍</span>
+<span>💻</span>
+<span>⚡</span>
+
+</div>
+
+</header>
+
+
+<section id="about" class="reveal">
+
+<h2>About</h2>
+
+<div class="card">
+<p>{{profile.about}}</p>
+</div>
+
+</section>
+
+
+<section id="skills" class="reveal">
+
+<h2>Skills</h2>
+
+<div class="card">
+
+<div class="skills">
+
+{% for skill in profile.skills %}
+
+<div class="skill">{{skill}}</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="experience" class="reveal">
+
+<h2>Experience</h2>
+
+{% for exp in profile.experience %}
+
+<div class="card">
+
+<h3>{{exp.role}}</h3>
+
+<p>{{exp.company}} | {{exp.duration}}</p>
+
+<ul>
+
+{% for p in exp.points %}
+
+<li>{{p}}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+{% endfor %}
+
+</section>
+
+
+<section id="projects" class="reveal">
+
+<h2>Projects</h2>
+
+{% for project in profile.projects %}
+
+<div class="card">
+
+<h3>{{project.title}}</h3>
+
+<p>{{project.desc}}</p>
+
+</div>
+
+{% endfor %}
+
+</section>
+
+
+<section class="reveal">
+
+<h2>Education</h2>
+
+<div class="card">
+
+<p>{{profile.education.degree}}</p>
+<p>{{profile.education.college}}</p>
+<p>{{profile.education.year}}</p>
+
+</div>
+
+</section>
+
+
+<section class="reveal">
+
+<h2>Certifications</h2>
+
+<div class="card">
+
+<ul>
+
+{% for c in profile.certifications %}
+
+<li>{{c}}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+</section>
+
+
+<section id="contact" class="reveal">
+
+<h2>Contact</h2>
+
+<div class="card">
+
+<p>Email: <a href="mailto:{{profile.email}}">{{profile.email}}</a></p>
+
+<p>Phone: <a href="tel:{{profile.phone}}">{{profile.phone}}</a></p>
+
+<p><a href="{{profile.linkedin}}" target="_blank">LinkedIn</a></p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 Monika Sri S
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
