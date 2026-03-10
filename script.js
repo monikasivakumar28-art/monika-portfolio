@@ -6,7 +6,7 @@ window.scrollTo(0,0)
 
 
 
-/* Typing Animation (runs once, no loop) */
+/* Typing Animation */
 
 const text = "HR Assistant | Python Developer | Web Enthusiast"
 
@@ -95,26 +95,6 @@ link.classList.add("active")
 
 
 
-/* Skill Progress Animation */
-
-const skillBars = document.querySelectorAll(".skill-bar span")
-
-function animateSkills(){
-
-skillBars.forEach(bar=>{
-
-let width = bar.getAttribute("data-width")
-
-bar.style.width = width
-
-})
-
-}
-
-window.addEventListener("scroll",animateSkills)
-
-
-
 /* Resume Download Button Animation */
 
 const resumeBtn = document.querySelector(".resume-btn")
@@ -141,13 +121,42 @@ particlesJS("particles-js",{
 
 particles:{
 
-number:{value:60},
+number:{
+value:60
+},
 
-size:{value:3},
+size:{
+value:3
+},
 
-move:{speed:1.5},
+move:{
+speed:1.5
+},
 
-line_linked:{enable:true}
+line_linked:{
+enable:true,
+distance:150,
+color:"#38bdf8",
+opacity:0.4,
+width:1
+}
+
+},
+
+interactivity:{
+
+events:{
+onhover:{
+enable:true,
+mode:"repulse"
+}
+},
+
+modes:{
+repulse:{
+distance:100
+}
+}
 
 }
 
