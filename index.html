@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>{{profile.name}}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Monika Sri S</title>
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <div id="particles-js"></div>
 
+<!-- NAVBAR -->
+
 <nav class="navbar">
 
-<div class="logo">{{profile.name}}</div>
+<div class="logo">Monika Sri S</div>
 
 <ul>
 
@@ -30,15 +36,17 @@
 </nav>
 
 
+<!-- HERO SECTION -->
+
 <header id="home" class="hero">
 
-<h1>{{profile.name}}</h1>
+<h1>Monika Sri S</h1>
 
 <h3 class="typing"></h3><span class="cursor">|</span>
 
-<p>{{profile.location}}</p>
+<p>Chennai, India</p>
 
-<a href="/static/Monika_Sri_Resume.pdf" download="Monika_Sri_Resume.pdf" class="resume-btn">
+<a href="Monika_Sri_Resume.pdf" download class="resume-btn">
 <span>⬇ Download Resume</span>
 </a>
 
@@ -53,16 +61,28 @@
 </header>
 
 
+<!-- ABOUT -->
+
 <section id="about" class="reveal">
 
 <h2>About</h2>
 
 <div class="card">
-<p>{{profile.about}}</p>
+
+<p>
+Detail-oriented and dedicated Admin Executive with experience in payroll management and office administration.
+Skilled in handling end-to-end payroll processing, maintaining accurate employee records, and supporting HR and finance operations.
+Strong ability to manage documentation, coordinate with teams, and ensure smooth organizational workflows.
+Backed by a B.Sc. in Computer Science and certifications in HTML, CSS, JavaScript, and React, with additional
+experience developing a Python Voice Assistant project.
+</p>
+
 </div>
 
 </section>
 
+
+<!-- SKILLS -->
 
 <section id="skills" class="reveal">
 
@@ -72,11 +92,14 @@
 
 <div class="skills">
 
-{% for skill in profile.skills %}
-
-<div class="skill">{{skill}}</div>
-
-{% endfor %}
+<div class="skill">Python</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">React</div>
+<div class="skill">Payroll Management</div>
+<div class="skill">Microsoft Excel</div>
+<div class="skill">VS Code</div>
 
 </div>
 
@@ -84,54 +107,63 @@
 
 </section>
 
+
+<!-- EXPERIENCE -->
 
 <section id="experience" class="reveal">
 
 <h2>Experience</h2>
 
-{% for exp in profile.experience %}
-
 <div class="card">
 
-<h3>{{exp.role}}</h3>
+<h3>HR Assistant – Payroll</h3>
 
-<p>{{exp.company}} | {{exp.duration}}</p>
+<p>Tavron Engineers | Sep 2024 – Present</p>
 
 <ul>
 
-{% for p in exp.points %}
+<li>Managing end-to-end payroll processing for employees ensuring accurate salary disbursement.</li>
 
-<li>{{p}}</li>
+<li>Maintaining employee attendance, leave data and timesheets for payroll calculations.</li>
 
-{% endfor %}
+<li>Handling new joiner documentation and maintaining HR records.</li>
+
+<li>Coordinating with accounts for salary revisions, reimbursements and incentives.</li>
+
+<li>Preparing payroll reports and compliance documents.</li>
+
+<li>Supporting day-to-day administrative operations.</li>
 
 </ul>
 
 </div>
 
-{% endfor %}
-
 </section>
 
+
+<!-- PROJECTS -->
 
 <section id="projects" class="reveal">
 
 <h2>Projects</h2>
 
-{% for project in profile.projects %}
-
 <div class="card">
 
-<h3>{{project.title}}</h3>
+<h3>Voice Assistant with ChatGPT</h3>
 
-<p>{{project.desc}}</p>
+<p>
+
+Developed an interactive chatbot integrated with ChatGPT API that responds to user queries in real time.
+Built using Python with HTML, CSS and JavaScript for the web interface.
+
+</p>
 
 </div>
 
-{% endfor %}
-
 </section>
 
+
+<!-- EDUCATION -->
 
 <section class="reveal">
 
@@ -139,14 +171,16 @@
 
 <div class="card">
 
-<p>{{profile.education.degree}}</p>
-<p>{{profile.education.college}}</p>
-<p>{{profile.education.year}}</p>
+<p><strong>B.Sc. Computer Science</strong></p>
+<p>Sir Theagaraya College</p>
+<p>2021 – 2024 | Chennai, India</p>
 
 </div>
 
 </section>
 
+
+<!-- CERTIFICATIONS -->
 
 <section class="reveal">
 
@@ -156,11 +190,10 @@
 
 <ul>
 
-{% for c in profile.certifications %}
-
-<li>{{c}}</li>
-
-{% endfor %}
+<li>HTML Certificate – Mimo</li>
+<li>CSS Certificate – Mimo</li>
+<li>JavaScript Certificate – Mimo</li>
+<li>Python Certificate – Mimo (In Progress)</li>
 
 </ul>
 
@@ -169,22 +202,38 @@
 </section>
 
 
+<!-- CONTACT -->
+
 <section id="contact" class="reveal">
 
 <h2>Contact</h2>
 
 <div class="card">
 
-<p>Email: <a href="mailto:{{profile.email}}">{{profile.email}}</a></p>
+<p>Email: 
+<a href="mailto:monikasivakumar28@gmail.com">
+monikasivakumar28@gmail.com
+</a>
+</p>
 
-<p>Phone: <a href="tel:{{profile.phone}}">{{profile.phone}}</a></p>
+<p>Phone: 
+<a href="tel:+919677161227">
+9677161227
+</a>
+</p>
 
-<p><a href="{{profile.linkedin}}" target="_blank">LinkedIn</a></p>
+<p>
+<a href="https://linkedin.com/in/monika-sri28" target="_blank">
+LinkedIn Profile
+</a>
+</p>
 
 </div>
 
 </section>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -192,12 +241,13 @@
 
 </footer>
 
+
+<!-- PARTICLES JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="script.js"></script>
 
 </body>
 
-
 </html>
-
